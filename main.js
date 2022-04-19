@@ -11,64 +11,46 @@ function handleclick(e) {
   counter++;
   let cell = e.target;
   if (choice === true) {
-    cell.style.background = "red";
+    cell.style.backgroundImage = " url('o.png') "
+    cell.style.backgroundSize = "100px 100px";
+
   } else {
-    cell.style.background = "blue";
+    cell.style.backgroundImage = "url('x.png')";
+    cell.style.backgroundSize = "100px 100px";
   }
-  check("red");
-  check("blue");
+  check("url('x.png')" ,"x ");
+  check("url('o.png')", "o ");
   choice = !choice;
 }
 
-function check(pick) {
+function check(pick , winner) {
   if (
-    cells[0].style.background === pick &&
-    cells[1].style.background === pick &&
-    cells[2].style.background === pick
+    cells[0].style.ibackgroundImage === pick &&
+    cells[1].style.ibackgroundImage === pick &&
+    cells[2].style.ibackgroundImage === pick ||
+    cells[3].style.ibackgroundImage === pick &&
+    cells[4].style.ibackgroundImage === pick &&
+    cells[5].style.ibackgroundImage === pick ||
+    cells[6].style.ibackgroundImage === pick &&
+    cells[7].style.ibackgroundImage === pick &&
+    cells[8].style.ibackgroundImage === pick ||
+    cells[0].style.ibackgroundImage === pick &&
+    cells[3].style.ibackgroundImage === pick &&
+    cells[6].style.ibackgroundImage === pick ||
+    cells[1].style.ibackgroundImage === pick &&
+    cells[4].style.ibackgroundImage === pick &&
+    cells[7].style.ibackgroundImage === pick ||
+    cells[2].style.ibackgroundImage === pick &&
+    cells[5].style.ibackgroundImage === pick &&
+    cells[8].style.ibackgroundImage === pick ||
+    cells[0].style.ibackgroundImage === pick &&
+    cells[4].style.ibackgroundImage === pick &&
+    cells[8].style.ibackgroundImage === pick ||
+    cells[2].style.ibackgroundImage === pick &&
+    cells[4].style.ibackgroundImage === pick &&
+    cells[6].style.ibackgroundImage === pick
   ) {
-    alert(pick + " is the winner ");
-  } else if (
-    cells[3].style.background === pick &&
-    cells[4].style.background === pick &&
-    cells[5].style.background === pick
-  ) {
-    alert(pick + " is the winner ");
-  } else if (
-    cells[6].style.background === pick &&
-    cells[7].style.background === pick &&
-    cells[8].style.background === pick
-  ) {
-    alert(pick + " is the winner ");
-  } else if (
-    cells[0].style.background === pick &&
-    cells[3].style.background === pick &&
-    cells[6].style.background === pick
-  ) {
-    alert(pick + " is the winner ");
-  } else if (
-    cells[1].style.background === pick &&
-    cells[4].style.background === pick &&
-    cells[7].style.background === pick
-  ) {
-    alert(pick + " is the winner ");
-  } else if (
-    cells[2].style.background === pick &&
-    cells[5].style.background === pick &&
-    cells[8].style.background === pick
-  ) {
-    alert(pick + " is the winner ");
-  } else if (
-    cells[0].style.background === pick &&
-    cells[4].style.background === pick &&
-    cells[8].style.background === pick
-  ) {
-    alert(pick + " is the winner ");
-  } else if (
-    cells[2].style.background === pick &&
-    cells[4].style.background === pick &&
-    cells[6].style.background === pick
-  ) {
-    alert(pick + " is the winner ");
+    alert(winner + " is the winner ");
   } else if (counter >= 9) {
     alert("it's a draw");
   }

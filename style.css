@@ -12,6 +12,13 @@
 .board .cell {
   width: 100px;
   height: 100px;
-  background-color: black;
-  border: 1px solid white;
+  /* background-color: black; */
+  border: 1px solid black;
+}
+button{
+  display: absolute;
+  top:88px;
+  background-color: aquamarine;
+  justify-content: center;
+  align-items: center;
 }
